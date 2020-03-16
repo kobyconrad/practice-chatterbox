@@ -1,12 +1,15 @@
 var RoomsView = {
+  $button: $("#rooms button"),
+  $select: $("#rooms select"),
 
-  $button: $('#rooms button'),
-  $select: $('#rooms select'),
+  initialize: function() {},
 
-  initialize: function() {
+  render: function(roomName) {
+    return (htmlMessage = $("<p></p>").text(`${roomName}`));
   },
 
-  render: function() {
+  renderRoom: function(roomName) {
+    var currentRoom = RoomsView.render(roomName);
+    $("#rooms select").append(currentRoom);
   }
-
 };
